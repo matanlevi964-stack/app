@@ -1,11 +1,17 @@
-pipline {
+pipeline {
+    agent any
 
-        agent any
-
-        stages {
-
-            steps{
-                echo 'building'
+    stages {
+        stage('Test') {
+            steps {
+                echo 'Testing'
             }
         }
+
+        stage('Run Python') {
+            steps {
+                sh 'python app.py'  // אם Windows: bat "python app.py"
+            }
+        }
+    }
 }
