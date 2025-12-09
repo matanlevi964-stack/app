@@ -10,7 +10,7 @@ pipeline {
 
         stage('Run Python') {
             steps {
-                sh 'python app.py'  // אם Windows: bat "python app.py"
+                python app.py  // אם Windows: bat "python app.py"
             }
         }
     }
